@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Feelman - HTML/CSS верстка сайтов. Адаптивно, резиново, фиксировано, кроссбраузерно.</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="page-header">
+      <nav class="main-nav">
+        <ul class="main-nav__items">
+          <li class="main-nav__item">
+            <a>Главная</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#portfolio">Портфолио</a>
+          </li>
+          <li class="main-nav__item">
+            <a href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article class="about-me">
+        <h1 class="about-me__title">Feelman - услуги по HTML/CSS верстке сайтов</h1>
+        <div class="about-me__description">
+          <ul class="about-me__description-items">
+            <li class="about-me__description-item">HTML5, CSS3, JS</li>
+            <li class="about-me__description-item">Адаптивная верстка</li>
+            <li class="about-me__description-item">Фиксированная/резиновая верстка</li>
+            <li class="about-me__description-item">Кроссбраузерная</li>
+            <li class="about-me__description-item"><a rel="nofollow" href="https://validator.w3.org/nu/" target="_blank">Валидная</a></li>
+            <li class="about-me__description-item">БЭМ, LESS, Grunt, Git, Photoshop</li>
+          </ul>
+        </div>
+      </article>
+      <article class="portfolio">
+        <h2 class="portfolio__title">Портфолио</h2>
+        <section class="portfolio__items">
+          <div class="portfolio__item">
+            <h3 class="portfolio__item-title">Sedona</h3>
+            <p class="portfolio__item-title-description">Фиксированная верстка</p>
+            <div class="portfolio__item-page">
+              <p class="portfolio__item-description">Главная страница</p>
+              <img class="portfolio__item-image" src="portfolio/sedona/screen-main.jpg" width="300px" height="243px">
+            </div>
+            <div class="portfolio__item-page">
+              <p class="portfolio__item-description">Каталог</p>
+              <img class="portfolio__item-image" src="portfolio/sedona/screen-catalog.jpg" width="300px" height="243px">
+            </div>
+          </div>
+        </section>
+      </article>
+      <article class="contacts">
+        <h2 class="contacts__title">Контакты</h2>
+        <span class="contacts__mail">mail@feelman.info</span>
+      </article>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__copyright">
+        <span>Feelman</span>
+      </div>
+    </footer>
+  </body>
+</html>
