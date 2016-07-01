@@ -1,17 +1,17 @@
 {
-  "name": "html-start",
+  "name": "feelman.info",
   "version": "0.1.0",
   "private": true,
   "description": "",
-  "author": "Konstantin Filobok",
+  "author": "feelman",
   "repository": {
     "type": "git",
-    "url": "git@github.com:feelman/html-start.git"
+    "url": "git@github.com:feelman/feelman.git"
   },
   "bugs": {
-    "url": "https://github.com/feelman/html-start/issues"
+    "url": "https://github.com/feelman/feelman/issues"
   },
-  "homepage": "https://github.com/feelman/html-start",
+  "homepage": "https://github.com/feelman/feelman",
   "devDependencies": {
     "autoprefixer": "6.3.6",
     "editorconfig-tools": "0.1.1",

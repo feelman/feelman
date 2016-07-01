@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Feelman - HTML/CSS верстка сайтов. Адаптивно, резиново, фиксировано, кроссбраузерно.</title>
+    <title>Feelman: HTML/CSS верстка сайтов. Адаптивно, резиново, фиксировано, кроссбраузерно.</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -37,32 +37,48 @@
           </ul>
         </div>
       </article>
-      <article class="portfolio">
+      <article id="portfolio" class="portfolio">
         <h2 class="portfolio__title">Портфолио</h2>
         <section class="portfolio__items">
           <div class="portfolio__item">
-            <h3 class="portfolio__item-title">Sedona</h3>
-            <p class="portfolio__item-title-description">Фиксированная верстка</p>
-            <div class="portfolio__item-page">
-              <p class="portfolio__item-description">Главная страница</p>
-              <img class="portfolio__item-image" src="portfolio/sedona/screen-main.jpg" width="300px" height="243px">
+            <h3 class="portfolio__item-title">Mishka</h3>
+            <div class="portfolio__item-pages">
+              <div class="portfolio__item-page">
+                <p class="portfolio__item-description">Главная страница</p>
+                <img class="portfolio__item-image" src="img/mishka/main.jpg" width="300px" height="320px">
+              </div>
+              <div class="portfolio__item-page">
+                <p class="portfolio__item-description">Каталог</p>
+                <img class="portfolio__item-image" src="img/mishka/catalog.jpg" width="300px" height="320px">
+              </div>
+              <div class="portfolio__item-page">
+                <p class="portfolio__item-description">Форма</p>
+                <img class="portfolio__item-image" src="img/mishka/form.jpg" width="300px" height="320px">
+              </div>
             </div>
-            <div class="portfolio__item-page">
-              <p class="portfolio__item-description">Каталог</p>
-              <img class="portfolio__item-image" src="portfolio/sedona/screen-catalog.jpg" width="300px" height="243px">
+          </div>
+          <div class="portfolio__item">
+            <h3 class="portfolio__item-title">Sedona</h3>
+            <div class="portfolio__item-pages">
+              <div class="portfolio__item-page">
+                <p class="portfolio__item-description">Главная страница</p>
+                <img class="portfolio__item-image" src="img/sedona/main.jpg" width="300px" height="320px">
+              </div>
+              <div class="portfolio__item-page">
+                <p class="portfolio__item-description">Каталог</p>
+                <img class="portfolio__item-image" src="img/sedona/catalog.jpg" width="300px" height="219px">
+              </div>
             </div>
           </div>
         </section>
       </article>
-      <article class="contacts">
+      <article id="contacts" class="contacts">
         <h2 class="contacts__title">Контакты</h2>
-        <span class="contacts__mail">mail@feelman.info</span>
+        <span class="contacts__mail"><a href="mailto:mail@feelman.info">mail@feelman.info</a></span>
       </article>
     </main>
     <footer class="page-footer">
-      <div class="page-footer__copyright">
-        <span>Feelman</span>
-      </div>
+      <div class="page-footer__copyright"><a href="/">Feelman</a></div>
     </footer>
   </body>
 </html>
