@@ -16,7 +16,6 @@
 }
 
 .portfolio__items {
-  .container-fluid();
   padding: 0 30px;
 }
 
@@ -52,14 +51,36 @@
 
 @media @tablet-widths {
   
+  .portfolio {
+    .container-fluid();
+  }
+  
   .portfolio__item {
-    margin-bottom: 30px;
+    padding-bottom: 30px;
   }
   
   .portfolio__items {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  
+}
+
+@media @desktop-widths {
+  
+  .portfolio__items {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  .portfolio__item-image {
+    width: 450px;
+    height: 270px;
+  }
+  
+  .portfolio__item-description {
+    margin-left: 140px;
   }
   
 }
