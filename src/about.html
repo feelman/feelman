@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Feelman: Обо мне</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link href="css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="page-header__logo">
+        <a href="/">Feelman</a>
+      </div>
+      <div class="page-header__nav  page-header__nav--closed  page-header__nav--nojs">
+        <button class="page-header__toggle" type="button">Открыть меню</button>
+        <nav class="main-nav">
+          <ul class="main-nav__items">
+            <li class="main-nav__item">
+              <a href="about.html">Обо мне</a>
+            </li>
+            <!-- <li class="main-nav__item">
+              <a href="portfolio.html">Портфолио</a>
+            </li> -->
+            <li class="main-nav__item">
+              <a href="contact.html">Контакт</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <article class="about">
+        <img class="about__photo" src="img/about.jpg">
+        <h1 class="about__title">Обо мне</h1>
+        <p class="about__description">Меня зовут Константин и я занимаюсь HTML/CSS версткой сайтов, а так же натяжкой их на CMS Wordpress.</p>
+        <div class="about__skills">
+          <div class="about__skills-column">
+            <h2 class="about__title  about__title--second">Мои навыки</h2>
+            <ul class="about__description  about__description--skills">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Фиксированная верстка</li>
+              <li>Резиновая верстка</li>
+              <li>Адаптивная верстка</li>
+              <li>Кроссбраузерная (Chrome, Opera, Firefox, Safari, Edge, IE 11)</li>
+              <li>Валидная</li>
+              <li>Mobile first</li>
+            </ul>
+          </div>
+          <div class="about__skills-column">
+            <h2 class="about__title  about__title--second">Мои инструменты</h2>
+            <ul class="about__description  about__description--skills">
+              <li>БЭМ</li>
+              <li>LESS</li>
+              <li>Grunt</li>
+              <li>Git</li>
+              <li>Photoshop</li>
+              <li>Wordpress</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article id="contacts" class="contacts">
+        <h2 class="contacts__title">E-mail</h2>
+        <span class="contacts__mail"><a href="mailto:mail@feelman.info">mail@feelman.info</a></span>
+      </article>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__copyright"></div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
