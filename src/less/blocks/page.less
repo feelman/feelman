@@ -1,0 +1,92 @@
+.page {
+  margin-bottom: 60px;
+  padding: 0 30px;
+}
+
+.page__title {
+  position: relative;
+  margin: 15px 0px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  text-align: left;
+  
+  &::after {
+    .border-bottom();
+  }
+  
+  &--second {
+    margin-top: 30px;
+  }
+}
+
+.page__description {
+  line-height: 24px;
+  color: #666666;
+  
+  &--skills {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  & a {
+    color: #666666;
+    
+    &:hover {
+    color: #7c7a7a;
+  }
+  }
+}
+
+.page__photo {
+  display: block;
+  width: 100%;
+}
+
+.page__info {
+  margin-bottom: 40px;
+}
+
+@media @tablet-widths {
+  
+  .page {
+    .container-fluid();
+    padding-bottom: 50px;
+  }
+  
+  .page__photo {
+    display: block;
+    width: 100%;
+  }
+  
+  .page__title {
+    margin-top: 30px;
+  }
+  
+  .page__info {
+    display: flex;
+    margin-bottom: 80px;
+  }
+  
+  .page__info-column {
+    width: 200px;
+    margin-right: 100px;
+    
+    &:first-child {
+      width: 600px;
+    }
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  
+}
+
+@media @desktop-widths {
+  
+  .page__info-column {
+    margin-right: 50px;
+  }
+  
+}
