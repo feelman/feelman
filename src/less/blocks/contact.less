@@ -15,15 +15,20 @@
   }
 }
 
-.contact__form {
+form {
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  //margin-left: 30px; // Для Wordpress версии
+  
+  & p {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.contact__form-name input[type="text"],
-.contact__form-email input[type="text"],
-.contact__form-message textarea {
+input[type="text"],
+input[type="email"],
+textarea {
   width: 220px;
   margin-bottom: 15px;
   padding: 10px 20px;
@@ -37,7 +42,7 @@
 
 }
 
-.contact__form-message textarea {
+textarea {
   font-family: "Roboto", "Arial", sans-serif;
   font-size: 14px;
   height: 200px;
@@ -47,7 +52,7 @@
   display: none;
 }
 
-.contact__form-submit input[type="submit"] {
+input[type="submit"] {
   padding: 10px 20px;
   background-color: #ffffff;
   border: 1px solid #000000;
@@ -66,14 +71,14 @@
   
   .contact__title,
   .contact__form {
-    .container-fluid();
+    //.container-fluid(); // Для Wordpress версии
   }
   
-  .contact__form {
+form {
     padding-top: 30px;
   }
   
-  .contact__form-message textarea {
+textarea {
     width: 500px;
   }
   
