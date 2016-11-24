@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = function(grunt) {
-  
+
   require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
@@ -14,9 +14,12 @@ module.exports = function(grunt) {
             "fonts/**/*.{woff,woff2}",
             "img/**",
             "js/**",
-            "*.html"
+            "*.html",
+            "*.php",
+            "template-parts/*.php",
+            "inc/*.php"
           ],
-          dest: "build"
+          dest: "../feelman-wordpress/wp-content/themes/feelman"
         }]
       },
       html: {
@@ -24,19 +27,35 @@ module.exports = function(grunt) {
           expand: true,
           cwd: "src",
           src: ["*.html"],
-          dest: "build"
+          dest: "../feelman-wordpress/wp-content/themes/feelman"
+        }]
+      },
+      php: {
+        files: [{
+          expand: true,
+          cwd: "src",
+          src: ["*.php","template-parts/*.php","inc/*.php"],
+          dest: "../feelman-wordpress/wp-content/themes/feelman"
+        }]
+      },
+      image: {
+        files: [{
+          expand: true,
+          cwd: "src",
+          src: ["img/**"],
+          dest: "../feelman-wordpress/wp-content/themes/feelman"
         }]
       }
     },
-    
+
     clean: {
       build: ["build"]
     },
-    
+
     less: {
       style: {
         files: {
-          "build/css/style.css": "src/less/style.less"
+          "../feelman-wordpress/wp-content/themes/feelman/css/style.css": "src/less/style.less"
         }
       }
     },
@@ -54,21 +73,21 @@ module.exports = function(grunt) {
             ]})
           ]
         },
-        src: "build/css/*.css"
+        src: "../feelman-wordpress/wp-content/themes/feelman/css/*.css"
       }
     },
-    
+
     csso: {
       style: {
         options: {
           report: "gzip"
         },
         files: {
-          "build/css/style.min.css": ["build/css/style.css"]
+          "../feelman-wordpress/wp-content/themes/feelman/css/style.min.css": ["../feelman-wordpress/wp-content/themes/feelman/css/style.css"]
         }
       }
     },
-    
+
     svgstore: {
       options: {
         svg: {
@@ -77,20 +96,20 @@ module.exports = function(grunt) {
       },
       symbols: {
         files: {
-          "build/img/symbols.svg": ["src/img/*.svg"]
+          "../feelman-wordpress/wp-content/themes/feelman/img/symbols.svg": ["src/img/*.svg"]
         }
       }
     },
-    
+
     svgmin: {
       symbols: {
         files: [{
           expand: true,
-          src: ["build/img/*.svg"]
+          src: ["../feelman-wordpress/wp-content/themes/feelman/img/*.svg"]
         }]
       }
     },
-    
+
     imagemin: {
       images: {
         options: {
@@ -98,9 +117,21 @@ module.exports = function(grunt) {
         },
         files: [{
           expand: true,
-          src: ["build/img/**/*.{png,jpg,gif}"]
+          src: ["../feelman-wordpress/wp-content/themes/feelman/img/**/*.{png,jpg,gif}"]
         }]
       }
+    },
+
+    php: {
+        dist: {
+            options: {
+                hostname: 'localhost',
+                port: 3000,
+                base: '../feelman-wordpress', // Project root
+                keepalive: false,
+                open: false
+            }
+        }
     },
 
     browserSync: {
@@ -108,11 +139,14 @@ module.exports = function(grunt) {
         bsFiles: {
           src: [
             "*.html",
+            "*.php",
+            "template-parts/*.php",
+            "inc/*.php",
             "css/*.css"
           ]
         },
         options: {
-          server: "build",
+          server: "../feelman-wordpress",
           watchTask: true,
           notify: false,
           open: true,
@@ -126,17 +160,25 @@ module.exports = function(grunt) {
         files: ["src/*.html"],
         tasks: ["copy:html"]
       },
+      php: {
+        files: ["src/*.php","src/template-parts/*.php","src/inc/*.php"],
+        tasks: ["copy:php"]
+      },
       style: {
         files: ["src/less/**/*.less"],
         tasks: ["less", "postcss", "csso"],
         options: {
           spawn: false
         }
+      },
+      image: {
+        files: ["src/img/**"],
+        tasks: ["copy:image"]
       }
     }
   });
 
-  grunt.registerTask("serve", ["browserSync", "watch"]);
+  grunt.registerTask("serve", ["php:dist", "browserSync", "watch"]);
   grunt.registerTask("symbols", ["svgmin", "svgstore"]);
   grunt.registerTask("build", [
     "clean",
